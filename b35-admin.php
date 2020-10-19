@@ -17,7 +17,8 @@ require_b35([
 ]);
 
 require_admin_b35([
-  "colored-admin-bar"
+  "colored-admin-bar",
+  "image-sizes-widget"
 ]);
 
 function require_b35($b35_includes) {
