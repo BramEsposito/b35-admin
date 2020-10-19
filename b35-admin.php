@@ -31,7 +31,7 @@ function require_b35($b35_includes) {
 }
 
 function require_admin_b35($admin_includes) {
-  foreach ( $b35_includes as $file ) {
+  foreach ( $admin_includes as $file ) {
     $filepath =   __DIR__."/admin/b35-". $file.".php";
     if ( ! file_exists($filepath) ) {
       trigger_error( sprintf( 'Error locating inc/b35-%s.php for inclusion', $file ), E_USER_ERROR );
