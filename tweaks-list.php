@@ -24,6 +24,14 @@ $general_list = [
     "description" => __("Disable the default post type in Wordpress. You'd 
     preferably define your own custom post types to avoid hassles with use-front", "b35-admin")
   ],
+  "wide-blocks" => [
+    "title" => __("Allow blocks to be wide", "b35-admin"),
+    "description" => __("Let's you set the blocks width in the Blocks editor and on the frontend. Compatible with the Twenty-twenty-one theme", "b35-admin")
+  ],
+  "smooth-anchor-scroll" => [
+    "title" => __("Scroll smoothly to anchor", "b35-admin"),
+    "description" => __("Scroll smoothly to anchors in page", "b35-admin")
+  ]
 ];
 
 $developer_list = [

@@ -10,6 +10,8 @@ Text Domain: b35-admin
 License: MIT License
 */
 
+define("B35_PLUGIN_URL", plugins_url()."/b35-admin/");
+
 if (is_admin()) {
   require_once(__DIR__."/inc/AdminManager.php");
   // init UI
