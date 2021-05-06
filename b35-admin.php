@@ -20,6 +20,15 @@ if (is_admin()) {
 
 $activeTweaksSets = get_option("b35_admin_settings",[]);
 
+function b35HandleError($errno, $errstring, $errfile, $errline, $errcontext) {
+  if (error_reporting() & $errno) {
+    // TODO: show notification in WordPress Admin UI that settings should be reviewed
+  }
+  return true;
+}
+// Set error handler to our custom handler
+set_error_handler('b35HandleError');
+
 foreach ($activeTweaksSets as $key => $set) {
   require_b35($key , $set);
 }
@@ -29,8 +38,9 @@ function require_b35($path, $b35_includes) {
   foreach ( $b35_includes as $file => $active ) {
     $filepath =   __DIR__."/sets/".$path."/b35-". $file.".php";
     if ( ! file_exists($filepath) ) {
-      trigger_error( sprintf( 'Error locating '.$filepath.' for inclusion', $file ), E_USER_ERROR );
+      trigger_error( sprintf( 'Error locating '.$filepath.' for inclusion', $file ), E_USER_WARNING );
+    } else {
+      require_once $filepath;
     }
-    require_once $filepath;
   }
 }
