@@ -1,8 +1,19 @@
 /**
  * Scrolls anchors into view
- * 
- * Set window.scrollOffset to the amount of pixels you want to offset 
+ *
+ * Set b35_smooth_anchor_scroll.scrollOffset to the amount of pixels you want to offset
  * between the window top and the target element
+ *
+ * Example code:
+ * ```
+ * add_action( 'wp_enqueue_scripts', function() {
+ *    wp_localize_script("wp-smooth-anchor-scroll" , 'b35_smooth_anchor_scroll',
+ *      array(
+ *        'scrollOffset' => -200,
+ *      )
+ *    );
+ *  });
+ * ```
  */
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -11,9 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
       const element = document.querySelector(this.getAttribute('href'));
 
-      if (window.scrollOffset != undefined) {
+      if (b35_smooth_anchor_scroll.scrollOffset != undefined) {
 
-        const y = element.getBoundingClientRect().top + window.pageYOffset + window.scrollOffset;
+        const y = element.getBoundingClientRect().top + window.pageYOffset + parseInt(b35_smooth_anchor_scroll.scrollOffset);
 
         window.scrollTo({top: y, behavior: 'smooth'});
       } else {
