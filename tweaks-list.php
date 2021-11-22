@@ -28,6 +28,14 @@ $general_list = [
   "smooth-anchor-scroll" => [
     "title" => __("Scroll smoothly to anchor", "b35-admin"),
     "description" => __("Scroll smoothly to anchors in page", "b35-admin")
+  ],
+  "animate" => [
+    "title" => __("Add Animate CSS", "b35-admin"),
+    "description" => __("See https://animate.style/", "b35-admin")
+  ],
+  "hide-page-title" => [
+    "title" => __("Hide Page/Post title", "b35-admin"),
+    "description" => __("Hide page title on pages and posts. Configure in the post editor sidebar.", "b35-admin")
   ]
 ];
 
