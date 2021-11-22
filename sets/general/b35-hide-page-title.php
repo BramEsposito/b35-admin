@@ -91,7 +91,12 @@ class someClass {
     /* OK, it's safe for us to save the data now. */
 
     // Sanitize the user input.
-    $mydata = sanitize_text_field( $_POST['b35_admin_hide_title'] );
+
+    if(sanitize_text_field( $_POST['b35_admin_hide_title'] ) == "on") {
+      $mydata = true;
+    } else {
+      $mydata = false;
+    }
 
     // Update the meta field.
     update_post_meta( $post_id, 'b35_admin_hide_title', $mydata );
@@ -108,14 +113,16 @@ class someClass {
     // Add an nonce field so we can check for it later.
     wp_nonce_field( 'b35_admin_inner_custom_box', 'b35_admin_inner_custom_box_nonce' );
 
+    $checked = "";
     // Use get_post_meta to retrieve an existing value from the database.
-    $value = get_post_meta( $post->ID, 'b35_admin_hide_title', true );
-
+    if (get_post_meta( $post->ID, 'b35_admin_hide_title', true )) {
+      $checked = " checked='checked'";
+    }
     // TODO: add ```small code {}``` css
     // Display the form, using the current value.
     ?>
     <label for="b35_admin_hide_title">
-      <input type="checkbox" id="b35_admin_hide_title" name="b35_admin_hide_title" checked="<?php echo esc_attr( $value ); ?>" />
+      <input type="checkbox" id="b35_admin_hide_title" name="b35_admin_hide_title"<?php echo $checked; ?> />
       <?php _e( 'Hide title on this page', 'b35-admin' ); ?><br>
       <small><?php printf(__("Use %s post meta value in templates to check if title has to be displayed.", "b35-admin"), "<code>b35_admin_hide_title</code>"); ?></small>
 
