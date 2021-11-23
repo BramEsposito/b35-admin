@@ -48,6 +48,10 @@ $developer_list = [
     "title" => "Image sizes widget",
     "description" => __("todo", "b35-admin")
   ],
+  "webp-converter-for-media" => [
+    "title" => "Webp Converter plugin fix",
+    "description" => __("This enables the usage of the Webp Converter for Media plugin on a Composer setup.", "b35-admin")
+  ]
 ];
 
 $block_editor_list = [
