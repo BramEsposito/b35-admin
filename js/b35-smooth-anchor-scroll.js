@@ -15,6 +15,13 @@
  *  });
  * ```
  */
+
+let destination = "";
+if (window.location.hash) {
+  destination = window.location.hash;
+  window.location.hash = "";
+}
+
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -34,4 +41,21 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   });
+
+  if (destination !== "") {
+
+    // on page load
+    $(document).ready(function(){
+      $(window).load(function() {
+        const element = document.querySelector(destination);
+        if (element) {
+          const y = element.getBoundingClientRect().top + window.pageYOffset + parseInt(b35_smooth_anchor_scroll.scrollOffset);
+
+          console.log("destination:", element.getBoundingClientRect().top);
+          console.log("scrolling to", y);
+          window.scrollTo({top: y, behavior: 'smooth'});
+        }
+      });
+    });
+  }
 });
