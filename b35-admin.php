@@ -20,7 +20,7 @@ if (is_admin()) {
 
 $activeTweaksSets = get_option("b35_admin_settings",[]);
 
-function b35HandleError($errno, $errstring, $errfile, $errline, $errcontext) {
+function b35HandleError($errno, $errstring, $errfile, $errline) {
   if (error_reporting() & $errno) {
     // TODO: show notification in WordPress Admin UI that settings should be reviewed
   }
