@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function() {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
 
+      if( this.getAttribute('href') === "#" ) return;
+
       const element = document.querySelector(this.getAttribute('href'));
 
       if (b35_smooth_anchor_scroll.scrollOffset != undefined) {
