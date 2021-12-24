@@ -19,6 +19,10 @@ add_filter( 'webpc_dir_url',  function($path) {
 /*
  * Alter path to upload directory for webp-converter-for-media plugin
  */
-add_filter( 'webpc_dir_path',  function($path) {
-  return realpath(WP_CONTENT_DIR."/uploads-webpc");
-});
+add_filter( 'webpc_dir_path',  function($path, $directory_type) {
+  if ($directory_type == "uploads") {
+    return realpath(WP_CONTENT_DIR."/uploads");
+  } else {
+    return realpath(WP_CONTENT_DIR."/uploads-webpc");
+  }
+},10,2);
