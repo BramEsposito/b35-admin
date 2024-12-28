@@ -66,5 +66,9 @@ $block_editor_list = [
   "reusable-blocks-menu" => [
     "title" => __("Show the reusable blocks in a navigation in the left menu", "b35-admin"),
     "description" => __("todo", "b35-admin")
+  ],
+  "word-count" => [
+    "title" => __("Add a word counter to paragraph blocks", "b35-admin"),
+    "description" => __("Adds a counter to the paragraph block that turns yellow when the block is longer than 300 words", "b35-admin")
   ]
 ];
