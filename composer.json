@@ -1,7 +1,7 @@
 {
     "name": "bramesposito/b35-admin",
     "description": "Customize Wordpress admin with regularly required features",
-    "version": "2.13",
+    "version": "2.14",
     "type": "wordpress-plugin",
     "license": "MIT",
     "minimum-stability": "dev",
