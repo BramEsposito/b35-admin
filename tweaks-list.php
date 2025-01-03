@@ -36,6 +36,10 @@ $general_list = [
   "hide-page-title" => [
     "title" => __("Hide Page/Post title", "b35-admin"),
     "description" => __("Hide page title on pages and posts. Configure in the post editor sidebar.", "b35-admin")
+  ],
+  "drafts-optimizations" => [
+    "title" => __("Add Draft Posts optimizations", "b35-admin"),
+    "description" => __("Adds a light-red background color to the draft posts in the posts overview list.", "b35-admin")
   ]
 ];
 
