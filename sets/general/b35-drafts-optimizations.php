@@ -13,29 +13,21 @@ function b35_drafts_optimizations_add_admin_styles()
 .striped> tbody#the-list > tr.status-draft .post-state {
     color: red;
 }
-#wp-admin-bar-b35_drafts_optimizations .drafts-count {
-    display: inline-block;
-    line-height: 2;
-}
-#wpadminbar > #wp-toolbar > #wp-admin-bar-root-default #wp-admin-bar-b35_drafts_optimizations .drafts-count .ab-icon {
-    padding: 0 0 0 4px
-}
-#wp-admin-bar-b35_drafts_optimizations .drafts-count .ab-label {
-    line-height: 2;
-    height: 24px;
-}
+/* CSS for wp admin bar */
 #wpadminbar:not(.mobile) .ab-top-menu > li#wp-admin-bar-b35_drafts_optimizations:hover > .ab-item {
     background: inherit;
 }
 #wp-admin-bar-b35_drafts_optimizations .drafts-count.count-0 {
     opacity: .5;
 }
+#wp-admin-bar-b35_drafts_optimizations .ab-item {
+    padding: 0;
+}
 #wp-admin-bar-b35_drafts_optimizations .drafts-count:not(.count-0) {
-    border-radius: 9px;
+    display: inline-block;
     background-color: #d63638;
     color: #fff;
-    /*margin: 1px 0 -1px 2px;*/
-    padding: 0 5px;
+    padding: 0 8px;
 }
 #wpadminbar:not(.mobile) .ab-top-menu > li#wp-admin-bar-b35_drafts_optimizations:hover > .ab-item .drafts-count:not(.count-0) {
     background-color: #700202;
