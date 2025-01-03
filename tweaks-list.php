@@ -40,6 +40,11 @@ $general_list = [
   "drafts-optimizations" => [
     "title" => __("Add Draft Posts optimizations", "b35-admin"),
     "description" => __("Adds a light-red background color to the draft posts in the posts overview list.", "b35-admin")
+  ],
+  "admin-shortcuts" => [
+    "title" => __("Press \"e\" to edit current post", "b35-admin"),
+    "description" => __("Adds a keyboard shortcut that allows you to go to the post edit screen "
+                        ."for the post you are currently looking at", "b35-admin")
   ]
 ];
 
