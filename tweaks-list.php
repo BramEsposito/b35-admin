@@ -60,6 +60,10 @@ $developer_list = [
   "webp-converter-for-media" => [
     "title" => "Webp Converter plugin fix",
     "description" => __("This enables the usage of the Webp Converter for Media plugin on a Composer setup.", "b35-admin")
+  ],
+  "filter-doing-it-wrong" => [
+    "title" => "Filter error messages related to _load_textdomain_just_in_time",
+    "description" => __("These flood the error logs.", "b35-admin")
   ]
 ];
 
