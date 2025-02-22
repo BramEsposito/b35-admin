@@ -64,6 +64,10 @@ $developer_list = [
   "filter-doing-it-wrong" => [
     "title" => "Filter error messages related to _load_textdomain_just_in_time",
     "description" => __("These flood the error logs.", "b35-admin")
+  ],
+  "deactivate-plugins" => [
+    "title" => "Deactivate plugins",
+    "description" => __("deactivate plugins on STAGING.", "b35-admin")
   ]
 ];
 
