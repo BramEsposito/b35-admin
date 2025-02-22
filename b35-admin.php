@@ -10,6 +10,11 @@ Text Domain: b35-admin
 License: MIT License
 */
 
+// If this file is called directly, abort.
+if ( ! defined( 'ABSPATH' ) ) {
+  exit;
+}
+
 define("B35_PLUGIN_URL", plugins_url()."/b35-admin/");
 
 if (is_admin()) {
