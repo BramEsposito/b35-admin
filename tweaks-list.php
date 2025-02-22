@@ -68,7 +68,11 @@ $developer_list = [
   "deactivate-plugins" => [
     "title" => "Deactivate plugins",
     "description" => __("deactivate plugins on STAGING.", "b35-admin")
-  ]
+  ],
+  "formatters" => [
+    "title" => "Add Formatting functions",
+    "description" => __("Formatting functions for amounts in Euro's, percentages and arrays to html lists.", "b35-admin")
+  ],
 ];
 
 $block_editor_list = [

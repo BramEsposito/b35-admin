@@ -5,7 +5,7 @@ Plugin URI: http://bramesposito.com
 Description: Customize admin with regularly required features
 Author: Bram Esposito
 Author URI: http://bramesposito.com
-Version: 2.20
+Version: 2.21
 Text Domain: b35-admin
 License: MIT License
 */
