@@ -18,11 +18,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 define("B35_PLUGIN_URL", plugins_url()."/b35-admin/");
 
 if (is_admin()) {
-  add_action('admin_init', function() {
-    require_once(__DIR__."/inc/AdminManager.php");
-    // init UI
-    $bam = new AdminManager();
-  });
+  require_once(__DIR__."/inc/AdminManager.php");
+  // init UI
+  $bam = new AdminManager();
 }
 
 $activeTweaksSets = get_option("b35_admin_settings",[]);
