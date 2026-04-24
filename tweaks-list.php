@@ -45,6 +45,10 @@ $general_list = [
     "title" => __("Press \"e\" to edit current post", "b35-admin"),
     "description" => __("Adds a keyboard shortcut that allows you to go to the post edit screen "
                         ."for the post you are currently looking at", "b35-admin")
+  ],
+  "themed-login" => [
+    "title" => __("Themed login page", "b35-admin"),
+    "description" => __("Applies the site's branding (logo, fonts, colors) to the WordPress login screen.", "b35-admin")
   ]
 ];
 
