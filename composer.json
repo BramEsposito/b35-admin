@@ -1,11 +1,14 @@
 {
-    "name": "bramesposito/b35-admin",
-    "description": "Customize Wordpress admin with regularly required features",
-    "version": "2.22",
-    "type": "wordpress-plugin",
-    "license": "MIT",
-    "minimum-stability": "dev",
-    "require": {},
-    "keywords": ["wordpress","plugin"],
-    "homepage": "https://github.com/BramEsposito/b35-admin"
+  "name": "bramesposito/b35-admin",
+  "description": "Customize Wordpress admin with regularly required features",
+  "version": "2.23",
+  "type": "wordpress-plugin",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "require": {},
+  "keywords": [
+    "wordpress",
+    "plugin"
+  ],
+  "homepage": "https://github.com/BramEsposito/b35-admin"
 }
