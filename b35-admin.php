@@ -6,7 +6,7 @@ Plugin URI: http://bramesposito.com
 Description: Customize admin with regularly required features
 Author: Bram Esposito
 Author URI: http://bramesposito.com
-Version: 2.24
+Version: 2.25
 Text Domain: b35-admin
 License: MIT License
 */
@@ -25,17 +25,6 @@ if (is_admin()) {
 }
 
 $activeTweaksSets = get_option('b35_admin_settings', []);
-
-function b35HandleError($errno, $errstring, $errfile, $errline)
-{
-    if (error_reporting() & $errno) {
-        // TODO: show notification in WordPress Admin UI that settings should be reviewed
-    }
-
-    return true;
-}
-// Set error handler to our custom handler
-set_error_handler('b35HandleError');
 
 foreach ($activeTweaksSets as $key => $set) {
     require_b35($key, $set);
