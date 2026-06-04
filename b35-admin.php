@@ -41,6 +41,7 @@ foreach ($activeTweaksSets as $key => $set) {
 function require_b35($path, $b35_includes) {
   $path = preg_replace("/[^\w\-]/",'', $path); // clean strange characters from string
   foreach ( $b35_includes as $file => $active ) {
+    $file = preg_replace("/[^\w\-]/",'', $file); // clean strange characters from string
     $filepath =   __DIR__."/sets/".$path."/b35-". $file.".php";
     if ( ! file_exists($filepath) ) {
       trigger_error( sprintf( 'Error locating '.$filepath.' for inclusion', $file ), E_USER_WARNING );

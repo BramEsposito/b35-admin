@@ -1,6 +1,7 @@
 # b35-admin
+![B35 Admin](b35-admin.png)
 
-WordPress admin plugin for recurrent functionality
+WordPress admin plugin for regularly required functionality
 
 
 ### How to add using Composer:

@@ -48,6 +48,7 @@ class AdminManager
       <h1><?php _e('Activate WordPress tweaks', 'b35-admin'); ?></h1>
       <form method="post" id="save_settings" action="">
         <?php
+            wp_nonce_field('b35-admin-save-tweaks');
             $this->handleNotice();
 
         foreach ($this->sets as $key => $tweak) {
@@ -76,19 +77,35 @@ class AdminManager
 
     public function handleAdminUI()
     {
-        if (isset($_POST['b35-admin-save-tweaks'])) {
-            // TODO: validation is insufficiently secure
-            $settings = [];
-            foreach ($this->sets as $key => $set) {
-                if (! empty($_POST[$key])) {
-                    foreach ($_POST[$key] as $tweak => $active) {
-                        if ($active == 'on') {
-                            $settings[$key][$tweak] = true;
-                        }
-                    }
+        if (! isset($_POST['b35-admin-save-tweaks'])) {
+            return;
+        }
+
+        // Only privileged users may change settings, and only via our own form.
+        if (! current_user_can($this->capability)) {
+            return;
+        }
+        check_admin_referer('b35-admin-save-tweaks');
+
+        // Load the canonical tweak lists so we can whitelist incoming keys.
+        require __DIR__.'/../tweaks-list.php';
+
+        $settings = [];
+        foreach ($this->sets as $key => $set) {
+            if (empty($_POST[$key]) || ! is_array($_POST[$key])) {
+                continue;
+            }
+
+            // Allowed tweak slugs for this set, e.g. $general_list.
+            $allowed = isset(${$key.'_list'}) && is_array(${$key.'_list'}) ? ${$key.'_list'} : [];
+
+            foreach ($_POST[$key] as $tweak => $active) {
+                if ($active === 'on' && isset($allowed[$tweak])) {
+                    $settings[$key][$tweak] = true;
                 }
-                update_option('b35_admin_settings', $settings);
             }
         }
+
+        update_option('b35_admin_settings', $settings);
     }
 }
