@@ -77,6 +77,10 @@ $developer_list = [
     "title" => "Add Formatting functions",
     "description" => __("Formatting functions for amounts in Euro's, percentages and arrays to html lists.", "b35-admin")
   ],
+  "environment-title-prefix" => [
+    "title" => __("Prefix page title with environment", "b35-admin"),
+    "description" => __("Prepends the page title with [STAGING] on staging and [LOCAL] on local, in both the frontend and the admin.", "b35-admin")
+  ],
 ];
 
 $block_editor_list = [

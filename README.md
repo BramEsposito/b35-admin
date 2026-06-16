@@ -58,6 +58,7 @@ Very simple Proof of Concept
 | `filter-doing-it-wrong` | Filter _load_textdomain_just_in_time errors | Filters error messages that flood the error logs. |
 | `deactivate-plugins` | Deactivate plugins | Deactivate plugins on STAGING. |
 | `formatters` | Add Formatting functions | Formatting functions for amounts in Euro's, percentages and arrays to html lists. |
+| `environment-title-prefix` | Prefix page title with environment | Prepends the page title with `[STAGING]` on staging and `[LOCAL]` on local, in both the frontend and the admin. |
 
 ### Block Editor tweaks
 
